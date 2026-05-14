@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="tokyo-night">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AC Indoor Unit Cleaning SOP · Training</title>
+<link rel="stylesheet" href="../../assets/fonts.css">
+<link rel="stylesheet" href="../../assets/base.css">
+<link rel="stylesheet" id="theme-link" href="../../assets/themes/tokyo-night.css">
+<link rel="stylesheet" href="../../assets/animations/animations.css">
+<script src="../../assets/animations/fx-runtime.js"></script>
+<style>
+/* ── Bilingual subtitle ── */
+.en{display:block;font-size:14px;font-weight:400;color:var(--text-3);margin-top:4px;letter-spacing:.02em}
+.en-title{font-size:18px;font-weight:300;color:var(--text-3);margin-top:6px;opacity:.85}
+
+/* ── Step cards ── */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:24px}
+.step{position:relative;padding:24px 26px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow);overflow:hidden}
+.step::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad)}
+.step .num{position:absolute;top:-24px;left:22px;width:48px;height:48px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;box-shadow:var(--shadow)}
+.step h4{margin:18px 0 4px;font-size:16px}
+.step .en{font-size:12px;margin-top:2px}
+.step p{font-size:13px;color:var(--text-2);line-height:1.6;margin-top:6px}
+.step .tag{display:inline-block;margin-top:10px;font-size:11px;padding:3px 10px;border-radius:999px;background:var(--surface-2);color:var(--text-3)}
+
+/* ── Table ── */
+.t{width:100%;border-collapse:collapse;font-size:14px}
+.t th,.t td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--border)}
+.t th{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);font-weight:600}
+.t tr:hover td{background:var(--surface-2)}
+
+/* ── Timeline ── */
+.timeline{position:relative;padding-left:36px;margin-top:24px}
+.timeline::before{content:'';position:absolute;left:13px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,var(--accent),var(--accent-2,#7aa2f7));opacity:.4}
+.timeline-item{position:relative;margin-bottom:18px}
+.timeline-marker{position:absolute;left:-36px;top:4px;width:26px;height:26px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);box-shadow:0 0 12px var(--accent);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff}
+.timeline-content h4{font-size:15px;margin-bottom:2px}
+.timeline-content .en{font-size:12px}
+.timeline-content p{font-size:13px;color:var(--text-2);margin-top:4px}
+
+/* ── Icon block ── */
+.icon-block{display:flex;align-items:flex-start;gap:16px}
+.icon-block .icon{flex-shrink:0;width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:28px;background:var(--surface-2);border:1px solid var(--border)}
+
+/* ── Visual placeholder (image area) ── */
+.visual{position:relative;border-radius:var(--radius);overflow:hidden;background:var(--surface-2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;min-height:180px}
+.visual .visual-label{position:absolute;bottom:8px;right:12px;font-size:10px;color:var(--text-3);opacity:.6;letter-spacing:.05em;text-transform:uppercase}
+.visual svg{width:100%;height:100%}
+
+/* ── Neon glow accent ── */
+.glow{box-shadow:0 0 20px rgba(125,207,255,.15),0 0 60px rgba(125,207,255,.05)}
+
+/* ── Stat number ── */
+.stat-num{font-size:72px;font-weight:900;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ── Bilingual card ── */
+.bi-card h4{margin-bottom:2px}
+.bi-card .en{margin-bottom:6px}
+</style>
+</head>
+<body data-themes="tokyo-night,dracula,catppuccin-mocha,cyberpunk-neon,terminal-green,blueprint" data-theme-base="../../assets/themes/">
+<div class="deck">
+
+  <!-- ═══════════════════ 1. COVER ═══════════════════ -->
+  <section class="slide" data-title="Cover">
+    <div data-fx="particle-burst" style="position:absolute;inset:0;pointer-events:none;opacity:.5"></div>
+    <p class="kicker">SOP · Standard Operating Procedure</p>
+    <h1 class="h1 anim-rise-in" data-anim="rise-in">空调内机清洗<span class="gradient-text">标准操作规程</h1>
+    <p class="en-title">AC Indoor Unit Cleaning — Standard Operating Procedure</p>
+    <p class="lede">服务人员培训 · Service Personnel Training</p>
+    <div class="row wrap mt-l" style="gap:8px">
+      <span class="pill pill-accent">SOP V1.0</span>
+      <span class="pill">2026.05</span>
+      <span class="pill">服务培训部 · Training Dept.</span>
+    </div>
+    <div class="deck-footer"><span class="dim2">AC Cleaning SOP · 空调清洗规程</span><span class="slide-number" data-current="1" data-total="12"></span></div>
+    <div class="notes">大家好，欢迎参加今天的空调内机清洗标准操作规程培训。今天的内容非常重要，直接关系到我们的服务质量和客户满意度。请各位认真记录，培训结束后会有考核。整个培训大约需要30分钟，我们从清洗的目的和适用范围开始，逐步讲解完整的作业流程、安全注意事项和质量验收标准。</div>
+  </section>
+
+  <!-- ═══════════════════ 2. TOC ═══════════════════ -->
+  <section class="slide" data-title="Agenda">
+    <p class="kicker">Agenda · 目录</p>
+    <h2 class="h2">今天我们将学习<span class="en">What We Will Cover Today</span></h2>
+    <div class="grid g3 mt-l anim-stagger-list" data-anim-target>
+      <div class="card bi-card"><div class="row"><div class="h3 dim2" style="width:56px">01</div><div><h4>培训目标</h4><span class="en">Training Objectives</span><p class="dim">掌握标准清洗流程的三大目标</p></div></div></div>
+      <div class="card bi-card"><div class="row"><div class="h3 dim2" style="width:56px">02</div><div><h4>工具与材料</h4><span class="en">Tools & Materials</span><p class="dim">清洗作业所需的全部装备清单</p></div></div></div>
+      <div class="card bi-card"><div class="row"><div class="h3 dim2" style="width:56px">03</div><div><h4>作业前检查</h4><span class="en">Pre-Work Inspection</span><p class="dim">开工前必须完成的4项确认</p></div></div></div>
+      <div class="card bi-card"><div class="row"><div class="h3 dim2" style="width:56px">04</div><div><h4>清洗流程</h4><span class="en">Cleaning Workflow</span><p class="dim">8步标准清洗操作详解</p></div></div></div>
+      <div class="card bi-card" style="grid-column:span 2"><div class="row"><div class="h3 dim2" style="width:56px">05</div><div><h4>安全 · 验收 · 问题处理</h4><span class="en">Safety · QA · Troubleshooting</span><p class="dim">安全规范 + 质量标准 + 常见问题</p></div></div></div>
+    </div>
+    <div class="deck-footer"><span class="dim2">AC Cleaning SOP</span><span class="slide-number" data-current="2" data-total="12"></span></div>
+    <div class="notes">今天的培训分五个模块。首先是培训目标，让大家明确学习的方向；然后是工具与材料准备；接着是作业前检查；核心部分是8步清洗流程；最后是安全规范、质量验收和常见问题处理。我们逐一展开。</div>
+  </section>
+
+  <!-- ═══════════════════ 3. OBJECTIVES ═══════════════════ -->
+  <section class="slide" data-title="Objectives">
+    <p class="kicker">Objectives · 培训目标</p>
+    <h2 class="h2">培训结束后，你将能够<span class="en">Upon Completion, You Will Be Able to</span></h2>
+    <div class="grid g2 mt-l" style="align-items:start">
+      <div>
+        <ul class="stack anim-stagger-list" style="list-style:none;padding:0;margin:0;gap:14px" data-anim-target>
+          <li class="card card-accent bi-card"><h4>① 掌握标准清洗流程</h4><span class="en">Master the Standard Cleaning Process</span><p class="dim">按照8步标准流程独立完成空调内机清洗作业，确保每一步操作规范、到位。<br><span class="en">Independently complete AC indoor unit cleaning following the 8-step SOP.</span></p></li>
+          <li class="card card-accent bi-card"><h4>② 保障作业安全</h4><span class="en">Ensure Operational Safety</span><p class="dim">严格遵守安全操作规程，正确使用防护用品，杜绝安全事故。<br><span class="en">Strictly follow safety protocols, use PPE correctly, and prevent accidents.</span></p></li>
+          <li class="card card-accent bi-card"><h4>③ 确保清洗质量</h4><span class="en">Guarantee Cleaning Quality</span><p class="dim">达到质量验收标准，让客户满意，减少返工和投诉。<br><span class="en">Meet QA standards, satisfy customers, and minimize rework or complaints.</span></p></li>
+        </ul>
+      </div>
+      <div class="visual glow" style="min-height:260px;background:linear-gradient(135deg,rgba(125,207,255,.08),rgba(187,154,247,.08))">
+        <div style="text-align:center;padding:24px">
+          <div style="font-size:64px;margin-bottom:12px">🎯</div>
+          <div class="stat-num">3</div>
+          <p style="color:var(--text-2);margin-top:8px;font-size:15px">Core Objectives<br><span style="color:var(--text-3);font-size:13px">核心目标</span></p>
+        </div>
+        <span class="visual-label">illustration</span>
+      </div>
+    </div>
+    <div class="deck-footer"><span class="dim2">AC Cleaning SOP</span><span class="slide-number" data-current="3" data-total="12"></span></div>
+    <div class="notes">我们这次培训有三个核心目标。第一，掌握标准清洗流程——8个步骤，每一步怎么做、注意什么，培训结束后你要能独立完成。第二，保障作业安全——这是底线，任何时候安全第一。第三，确保清洗质量——达到验收标准，让客户满意。三个目标，缺一不可。</div>
+  </section>
+
+  <!-- ═══════════════════ 4. TOOLS & MATERIALS ═══════════════════ -->
+  <section class="slide" data-title="Tools & Materials">
+    <p class="kicker">Preparation · 作业前准备</p>
+    <h2 class="h2">工具与材料清单<span class="en">Tools & Materials Checklist</span></h2>
+    <div class="grid g2 mt-l" style="align-items:start">
+      <div class="card" style="padding:4px 12px">
+        <table class="t">
+          <thead><tr><th>类别 Category</th><th>名称 Item</th><th>数量 Qty</th><th>备注 Note</th></tr></thead>
+          <tbody>
+            <tr><td><b>🔧 清洗工具</b></td><td>空调清洗罩<br><span class="en">Waterproof Cover</span></td><td>1套</td><td>根据机型选尺寸</td></tr>
+            <tr><td><b>🔧 清洗工具</b></td><td>高压喷壶/蒸汽机<br><span class="en">Pressure Sprayer</span></td><td>1台</td><td>压力可调</td></tr>
+            <tr><td><b>🔧 清洗工具</b></td><td>软毛刷 + 翅片梳<br><span class="en">Brush + Fin Comb</span></td><td>各1</td><td>大小各一把</td></tr>
+            <tr><td><b>🧴 清洗剂</b></td><td>空调专用清洗剂<br><span class="en">AC Cleaning Agent</span></td><td>1瓶</td><td>中性/弱碱性</td></tr>
+            <tr><td><b>🛡️ 防护用品</b></td><td>手套+口罩+护目镜<br><span class="en">Gloves+Mask+Goggles</span></td><td>各1</td><td>喷涂时必戴护目镜</td></tr>
+            <tr><td><b>🧰 辅助工具</b></td><td>螺丝刀+抹布+垃圾袋<br><span class="en">Screwdriver+Cloth+Bag</span></td><td>若干</td><td>抹布3-5块</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="visual glow" style="min-height:300px;background:linear-gradient(135deg,rgba(125,207,255,.06),rgba(187,154,247,.06))">
+        <div style="text-align:center;padding:20px">
+          <div style="font-size:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+            <div>🔧</div><div>🧴</div><div>🛡️</div>
+            <div>🧰</div><div>🪣</div><div>🧤</div>
+          </div>
+          <p style="color:var(--text-2);margin-top:16px;font-size:14px">出发前逐项核对<br><span class="en">Check every item before departure</span></p>
+        </div>
+        <span class="visual-label">illustration · tools</span>
+      </div>
+    </div>
+    <div class="deck-footer"><span class="dim2">AC Cleaning SOP</span><span class="slide-number" data-current="4" data-total="12"></span></div>
+    <div class="notes">首先看工具和材料。每次出发前，对照这个清单检查一遍，缺一样都可能影响作业。重点：清洗罩一定要根据机型选对尺寸；清洗剂必须是中性或弱碱性的，严禁用强酸强碱；护目镜不是可选的，喷涂清洗剂时必须佩戴。建议把这个清单打印出来贴在工具箱上。</div>
+  </section>
+
+  <!-- ═══════════════════ 5. PRE-CHECK ═══════════════════ -->
+  <section class="slide" data-title="Pre-Check">
+    <p class="kicker">Pre-Check · 作业前检查</p>
+    <h2 class="h2">作业前检查：4项必做确认<span class="en">4 Mandatory Pre-Work Checks</span></h2>
+    <div class="steps mt-l anim-stagger-list" data-anim-target>
+      <div class="step">
+        <div class="num">1</div>
+        <div style="font-size:28px;margin-bottom:8px">⚡</div>
+        <h4>确认电源</h4><span class="en">Power Off</span>
+        <p>关闭空调电源，拔掉插头或断开空开，挂"正在维修"警示牌。</p>
+        <span class="tag">🔌 Safety First</span>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <div style="font-size:28px;margin-bottom:8px">📷</div>
+        <h4>检查设备</h4><span class="en">Inspect Unit</span>
+        <p>记录品牌、型号、安装位置，拍照留存清洗前状态。</p>
+        <span class="tag">📸 Photo Record</span>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <div style="font-size:28px;margin-bottom:8px">🏠</div>
+        <h4>现场保护</h4><span class="en">Protect Area</span>
+        <p>在空调下方铺设防水布或塑料膜，保护墙面和地面。</p>
+        <span class="tag">🛡️ Cover Up</span>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <div style="font-size:28px;margin-bottom:8px">💬</div>
+        <h4>沟通确认</h4><span class="en">Client Briefing</span>
+        <p>与客户确认空调使用状况，了解是否有异味、制冷差等问题。</p>
+        <span class="tag">🤝 Communicate</span>
+      </div>
+    </div>
+    <div class="deck-footer"><span class="dim2">AC Cleaning SOP</span><span class="slide-number" data-current="5" data-total="12"></span></div>
+    <div class="notes">到达客户现场后，先完成这4项检查。第一步确认电源——必须断电后等待5分钟再作业。第二步检查设备——拍照留档，保护自己。第三步现场保护——铺好防水布。第四步沟通确认——问清楚客户空调有什么问题。这4步看起来简单，但每一步都不能省。</div>
+  </section>
+
+  <!-- ═══════════════════ 6. WORKFLOW PART 1 ═══════════════════ -->
+  <section class="slide" data-title="Workflow 1-4">
+    <p class="kicker">Workflow · Part 1/2</p>
+    <h2 class="h2">清洗流程：步骤 1 – 4<span class="en">Cleaning Process: Steps 1 – 4</span></h2>
+    <div class="grid g2 mt-l" style="align-items:start">
+      <div class="timeline">
+        <div class="timeline-item"><div class="timeline-marker">1</div><div class="timeline-content"><h4>拆卸面板与过滤网</h4><span class="en">Remove Panel & Filter · ~5 min</span><p>打开前面板，取出过滤网轻拍浮尘，取下导风板，记录卡扣位置。</p></div></div>
+        <div class="timeline-item"><div class="timeline-marker">2</div><div class="timeline-content"><h4>初除尘</h4><span class="en">Initial Dust Removal · ~5 min</span><p>用吸尘器对蒸发器翅片初步除尘，重点清理翅片缝隙，检查排水管。</p></div></div>
+        <div class="timeline-item"><div class="timeline-marker">3</div><div class="timeline-content"><h4>安装清洗防护</h4><span class="en">Install Protection · ~3 min</span><p>固定清洗罩，导水管引至接水桶，防水布遮盖电路板区域。</p></div></div>
+        <div class="timeline-item"><div class="timeline-marker">4</div><div class="timeline-content"><h4>喷涂清洗剂</h4><span class="en">Apply Cleaning Agent · ~10 min</span><p>按1:5~1:10稀释，自上而下均匀喷洒，静置10-15分钟分解污垢。</p></div></div>
+      </div>
+      <div class="visual glow" style="min-height:320px;background:linear-gradient(135deg,rgba(125,207,255,.06),rgba(187,154,247,.06))">
+        <div style="text-align:center;padding:24px">
+          <div style="font-size:56px;margin-bottom:16px">🧹</div>
+          <p style="font-size:16px;color:var(--text-1);font-weight:600">Steps 1 – 4 概览</p>
+          <p style="font-size:13px;color:var(--text-2);margin-top:8px;line-height:1.8">
+            拆卸 → 除尘 → 防护 → 喷涂<br>
+            <span class="en">Disassemble → Dust → Protect → Spray</span>
+          </p>
+          <div style="margin-top:16px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap">
+            <span class="pill">~23 min total</span>
+          </div>
+        </div>
+        <span class="visual-label">illustration · workflow</span>
+      </div>
+    </div>
+    <div class="deck-footer"><span class="dim2">AC Cleaning SOP</span><span class="slide-number" data-current="6" data-total="12"></span></div>
+    <div class="notes">现在进入核心清洗流程的前四步。拆卸面板注意卡扣式和螺丝式不同。初除尘用吸尘器扁嘴吸头。安装防护是关键——清洗罩要贴紧墙面，电路板区域必须遮盖。喷涂清洗剂配比按说明书，一般是1:5到1:10，自上而下、由内向外，保持15-20厘米距离，喷完静置10-15分钟。</div>
+  </section>
+
+  <!-- ═══════════════════ 7. WORKFLOW PART 2 ═══════════════════ -->
+  <section class="slide" data-title="Workflow 5-8">
+    <p class="kicker">Workflow · Part 2/2</p>
+    <h2 class="h2">清洗流程：步骤 5 – 8<span class="en">Cleaning Process: Steps 5 – 8</span></h2>
+    <div class="grid g2 mt-l" style="align-items:start">
+      <div class="timeline">
+        <div class="timeline-item"><div class="timeline-marker">5</div><div class="timeline-content"><h4>深度清洗</h4><span class="en">Deep Cleaning · ~15 min</span><p>高压水冲洗或蒸汽清洗，自上而下至水变清澈，用翅片梳整理倒伏翅片。</p></div></div>
+        <div class="timeline-item"><div class="timeline-marker">6</div><div class="timeline-content"><h4>部件清洗</h4><span class="en">Component Cleaning · ~10 min</span><p>过滤网清水冲洗+毛刷轻刷，接水盘清除霉斑水垢，外壳湿布擦拭。</p></div></div>
+        <div class="timeline-item"><div class="timeline-marker">7</div><div class="timeline-content"><h4>消毒杀菌</h4><span class="en">Disinfection · ~5 min</span><p>蒸发器翅片喷洒消毒剂，静置5分钟，按说明书决定是否冲洗。</p></div></div>
+        <div class="timeline-item"><div class="timeline-marker">8</div><div class="timeline-content"><h4>收尾检查</h4><span class="en">Final Inspection · ~5 min</span><p>拆除清洗罩，清理积水，测试排水管通畅，整理翅片，擦干水分。</p></div></div>
+      </div>
+      <div class="visual glow" style="min-height:320px;background:linear-gradient(135deg,rgba(125,207,255,.06),rgba(187,154,247,.06))">
+        <div style="text-align:center;padding:24px">
+          <div style="font-size:56px;margin-bottom:16px">💧</div>
+          <p style="font-size:16px;color:var(--text-1);font-weight:600">Steps 5 – 8 概览</p>
+          <p style="font-size:13px;color:var(--text-2);margin-top:8px;line-height:1.8">
+            深度清洗 → 部件清洗 → 消毒 → 收尾<br>
+            <span class="en">Deep Clean → Components → Disinfect → Wrap-up</span>
+          </p>
+          <div style="margin-top:16px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap">
+            <span class="pill">~35 min total</span>
+          </div>
+        </div>
+        <span class="visual-label">illustration · workflow</span>
+      </div>
+    </div>
+    <div class="deck-footer"><span class="dim2">AC Cleaning SOP</span><span class="slide-number" data-current="7" data-total="12"></span></div>
+    <div class="notes">后四步。第五步深度清洗最耗时，推荐高压水冲洗，水压不要太大。蒸汽清洗温度设100到120度。第六步部件清洗要逐一到位。第七步消毒杀菌静置5分钟。第八步收尾重点测试排水管。8步加起来约60分钟，熟练后可控制在45分钟。</div>
+  </section>
+
+  <!-- ═══════════════════ 8. ASSEMBLY & TESTING ═══════════════════ -->
+  <section class="slide" data-title="Assembly & Testing">
+    <p class="kicker">Assembly & Testing · 装复与测试</p>
+    <h2 class="h2">装复与测试：交付前的最后把关<span class="en">Reassembly & Testing: Final Check Before Handover</span></h2>
+    <div class="grid g3 mt-l anim-stagger-list" data-anim-target>
+      <div class="card card-accent bi-card">
+        <div style="font-size:36px;margin-bottom:8px">🔩</div>
+        <h4>① 装复部件 Reassembly</h4>
+        <p class="dim">安装过滤网（卡入到位），安装导风板，关闭前面板听到"咔哒"声，恢复螺丝紧固。<br><span class="en">Reinstall filter, louvers, and front panel. Confirm click sound and tighten screws.</span></p>
+      </div>
+      <div class="card card-accent bi-card">
+        <div style="font-size:36px;margin-bottom:8px">⚡</div>
+        <h4>② 通电测试 Power Test</h4>
+        <p class="dim">恢复供电，制冷模式运行10-15分钟。检查：出风量、异响、排水、制冷效果、遥控功能。<br><span class="en">Run cooling mode 10-15 min. Check airflow, noise, drainage, cooling, remote control.</span></p>
+      </div>
+      <div class="card card-accent bi-card">
+        <div style="font-size:36px;margin-bottom:8px">✅</div>
+        <h4>③ 交付确认 Handover</h4>
+        <p class="dim">向客户展示清洗前后对比照片，说明清洗效果及注意事项，请客户签字确认。<br><span class="en">Show before/after photos, explain results, and get customer sign-off.</span></p>
+      </div>
+    </div>
+    <div class="deck-footer"><span class="dim2">AC Cleaning SOP</span><span class="slide-number" data-current="8" data-total="12"></span></div>
+    <div class="notes">装复时过滤网一定要卡到位，前面板关上要听到咔哒声。通电测试制冷模式跑10到15分钟，重点看五项：出风量、异响、排水、制冷效果、遥控器。交付确认一定要给客户看清洗前后的对比照片，客户签字确认后才算完成。</div>
+  </section>
+
+  <!-- ═══════════════════ 9. SAFETY ═══════════════════ -->
+  <section class="slide" data-title="Safety">
+    <p class="kicker">Safety · 安全注意事项</p>
+    <h2 class="h2">安全注意事项：三条红线<span class="en">Safety Guidelines: Three Red Lines</span></h2>
+    <div class="grid g3 mt-l anim-stagger-list" data-anim-target>
+      <div class="card glow bi-card">
+        <div style="font-size:40px;margin-bottom:8px">👷</div>
+        <h4>人员安全 Personal Safety</h4>
+        <p class="dim">全程佩戴手套、口罩，喷涂时戴护目镜。高处作业（挂机高于2m）需稳固梯子，必要时系安全带。清洗剂接触皮肤立即用清水冲洗。<br><span class="en">Wear gloves & mask at all times; goggles when spraying. Use stable ladder for high-mounted units. Rinse skin immediately if cleaning agent contacts.</span></p>
+      </div>
+      <div class="card glow bi-card">
+        <div style="font-size:40px;margin-bottom:8px">⚡</div>
+        <h4>设备安全 Equipment Safety</h4>
+        <p class="dim"><b style="color:var(--accent)">严禁带电操作！</b>断电后等待5分钟再作业。避免水流进入电路板、电机。控制水压防止翅片倒伏。禁用强酸强碱清洗剂。<br><span class="en"><b style="color:var(--accent)">NEVER work on live equipment!</b> Wait 5 min after power-off. Protect PCB & motor from water. Control pressure to prevent fin damage.</span></p>
+      </div>
+      <div class="card glow bi-card">
+        <div style="font-size:40px;margin-bottom:8px">🏠</div>
+        <h4>现场安全 Site Safety</h4>
+        <p class="dim">做好防水保护，防止污水损坏客户财物。废水妥善收集处理，不得随意倾倒。作业完毕清理现场，恢复原状。<br><span class="en">Protect customer property from water damage. Collect wastewater properly. Clean up and restore site after work.</span></p>
+      </div>
+    </div>
+    <div class="deck-footer"><span class="dim2">AC Cleaning SOP</span><span class="slide-number" data-current="9" data-total="12"></span></div>
+    <div class="notes">安全是重中之重。防护用品全程佩戴。严禁带电操作，断电后还要等5分钟——电容里有残余电荷。高处作业用稳固梯子。废水一定要收集好，不能随便倒。保护好客户的家是最基本的职业素养。</div>
+  </section>
+
+  <!-- ═══════════════════ 10. QA STANDARDS ═══════════════════ -->
+  <section class="slide" data-title="QA Standards">
+    <p class="kicker">Quality · 质量验收</p>
+    <h2 class="h2">质量验收标准<span class="en">Quality Acceptance Standards</span></h2>
+    <div class="grid g2 mt-l" style="align-items:start">
+      <div class="card" style="padding:4px 12px">
+        <table class="t">
+          <thead><tr><th>检查项目 Item</th><th>验收标准 Criteria</th><th>判定方式 Method</th></tr></thead>
+          <tbody>
+            <tr><td><b>蒸发器翅片</b><br><span class="en">Evaporator Fins</span></td><td>无可见灰尘，翅片光亮<br><span class="en">No visible dust, shiny fins</span></td><td>目视 Visual</td></tr>
+            <tr><td><b>过滤网</b><br><span class="en">Filter Screen</span></td><td>洁净无污渍，无破损<br><span class="en">Clean, no stains or damage</span></td><td>目视 Visual</td></tr>
+            <tr><td><b>排水系统</b><br><span class="en">Drainage System</span></td><td>排水通畅，无堵塞<br><span class="en">Smooth flow, no blockage</span></td><td>通水测试 Flow Test</td></tr>
+            <tr><td><b>外壳</b><br><span class="en">Housing</span></td><td>清洁无污渍<br><span class="en">Clean, no stains</span></td><td>目视 Visual</td></tr>
+            <tr><td><b>运行状态</b><br><span class="en">Operation</span></td><td>制冷正常，无异味异响<br><span class="en">Normal cooling, no odor/noise</span></td><td>运行15分钟 Run 15min</td></tr>
+            <tr><td><b>现场</b><br><span class="en">Site</span></td><td>地面干燥，无污水残留<br><span class="en">Dry floor, no residue</span></td><td>目视 Visual</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="visual glow" style="min-height:300px;background:linear-gradient(135deg,rgba(125,207,255,.06),rgba(187,154,247,.06))">
+        <div style="text-align:center;padding:24px">
+          <div style="font-size:56px;margin-bottom:12px">✅</div>
+          <p style="font-size:16px;color:var(--text-1);font-weight:600">6 项检查 · 6 Checks</p>
+          <p style="font-size:13px;color:var(--text-2);margin-top:12px;line-height:1.8">
+            蒸发器 · 过滤网 · 排水<br>
+            外壳 · 运行 · 现场<br>
+            <span class="en">Fins · Filter · Drain<br>Housing · Operation · Site</span>
+          </p>
+          <div style="margin-top:16px"><span class="pill pill-accent">100% Pass Rate Target</span></div>
+        </div>
+        <span class="visual-label">illustration · checklist</span>
+      </div>
+    </div>
+    <div class="deck-footer"><span class="dim2">AC Cleaning SOP</span><span class="slide-number" data-current="10" data-total="12"></span></div>
+    <div class="notes">质量验收有6项标准，每项都有明确的判定方式。交付前自己先按这个表检查一遍，合格了再请客户验收。这样做既是对客户负责，也是保护自己——避免交付后被投诉。</div>
+  </section>
+
+  <!-- ═══════════════════ 11. CYCLE & TROUBLESHOOTING ═══════════════════ -->
+  <section class="slide" data-title="Cycle & Issues">
+    <p class="kicker">Reference · 参考指南</p>
+    <h2 class="h2">清洗周期 & 常见问题<span class="en">Cleaning Frequency & Troubleshooting</span></h2>
+    <div class="grid g2 mt-l" style="align-items:start">
+      <div class="card anim-fade-left" data-anim="fade-left">
+        <h3>清洗周期建议 <span class="en">Recommended Frequency</span></h3>
+        <table class="t" style="font-size:13px">
+          <tbody>
+            <tr><td><b>🏠 家庭日常</b><br><span class="en">Residential</span></td><td>每年 1-2 次<br><span class="en">1-2x / year</span></td></tr>
+            <tr><td><b>🏢 办公场所</b><br><span class="en">Office</span></td><td>每季度 1 次<br><span class="en">1x / quarter</span></td></tr>
+            <tr><td><b>🍳 餐饮/厨房</b><br><span class="en">Restaurant/Kitchen</span></td><td>每月 1 次<br><span class="en">1x / month</span></td></tr>
+            <tr><td><b>🏥 医院/洁净</b><br><span class="en">Hospital/Cleanroom</span></td><td>每月 1 次<br><span class="en">1x / month</span></td></tr>
+            <tr><td><b>🌫️ 粉尘环境</b><br><span class="en">Dusty Environment</span></td><td>每 2 个月 1 次<br><span class="en">1x / 2 months</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card anim-fade-right" data-anim="fade-right">
+        <h3>常见问题处理 <span class="en">Common Issues</span></h3>
+        <table class="t" style="font-size:13px">
+          <tbody>
+            <tr><td><b>🤢 仍有异味</b><br><span class="en">Persistent Odor</span></td><td>接水盘霉菌未清除彻底<br><span class="en">Drain pan mold not fully removed — re-clean & disinfect</span></td></tr>
+            <tr><td><b>💦 清洗后漏水</b><br><span class="en">Leaking After</span></td><td>排水管堵塞或未安装到位<br><span class="en">Drain clogged or misaligned — clear & verify</span></td></tr>
+            <tr><td><b>🌡️ 制冷未改善</b><br><span class="en">No Cooling Improvement</span></td><td>冷媒不足或室外机问题<br><span class="en">Low refrigerant or outdoor unit issue — refer to HVAC tech</span></td></tr>
+            <tr><td><b>📐 翅片倒伏</b><br><span class="en">Bent Fins</span></td><td>水压过大或翅片老化<br><span class="en">Excess pressure or aged fins — use fin comb to straighten</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="deck-footer"><span class="dim2">AC Cleaning SOP</span><span class="slide-number" data-current="11" data-total="12"></span></div>
+    <div class="notes">左边是清洗周期建议，可以建议客户按频率定期清洗。右边是4个常见问题及处理。异味多半是接水盘没洗干净；漏水是排水管问题；制冷没改善可能冷媒不足，建议客户联系专业维修；翅片倒伏用翅片梳整理。</div>
+  </section>
+
+  <!-- ═══════════════════ 12. CLOSING ═══════════════════ -->
+  <section class="slide center tc" data-title="Closing">
+    <div data-fx="constellation" style="position:absolute;inset:0;pointer-events:none;opacity:.3"></div>
+    <div style="position:relative;z-index:1">
+      <h1 class="h1 anim-fade-up" data-anim="fade-up" style="font-size:120px;line-height:1"><span class="gradient-text">Thanks</span></h1>
+      <p class="lede" style="margin:14px auto 0">规范操作 · 安全第一 · 质量为本</p>
+      <p class="en" style="text-align:center;font-size:16px;margin-top:4px">Standard Operation · Safety First · Quality Always</p>
+      <div class="card mt-l" style="max-width:560px;margin-left:auto;margin-right:auto;text-align:left;padding:20px 28px">
+        <h4>📋 作业记录要求 Record Keeping</h4>
+        <p class="dim" style="margin-top:8px">每次清洗作业完成后，请填写《空调清洗作业记录表》，包括：</p>
+        <ul class="dim" style="margin-top:6px;font-size:14px;line-height:1.8">
+          <li>作业日期、时间 · <span class="en">Date & time</span></li>
+          <li>设备型号、安装位置 · <span class="en">Model & location</span></li>
+          <li>清洗前后照片 · <span class="en">Before/after photos</span></li>
+          <li>异常问题及处理措施 · <span class="en">Issues & actions taken</span></li>
+          <li>客户签字确认 · <span class="en">Customer sign-off</span></li>
+        </ul>
+        <p style="color:var(--accent);font-size:13px;margin-top:10px;font-weight:600">记录保存期限：不少于 2 年 · Records retained ≥ 2 years</p>
+      </div>
+    </div>
+    <div class="deck-footer"><span class="dim2">AC Cleaning SOP · V1.0 · 2026</span><span class="slide-number" data-current="12" data-total="12"></span></div>
+    <div class="notes">今天的培训就到这里。最后强调——每次作业完成后，一定要填写《空调清洗作业记录表》，记录保存不少于2年。这不仅是规范要求，也是保护自己的最好方式。感谢大家的参与，有问题随时交流。谢谢！</div>
+  </section>
+
+</div>
+<script src="../../assets/runtime.js"></script>
+</body>
+</html>
